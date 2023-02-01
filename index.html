@@ -26,6 +26,7 @@
   border: 1px solid #dadde1;
   border-radius: 5px;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 5px 4px 2px 1px rgba(48, 51, 71, 0.1);;
  }
         body {
     font-family: monospace;
@@ -127,7 +128,8 @@
   }
   .temperature {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 34px;
+    padding: 5px;
   }
   a {
     text-decoration: none;
@@ -141,6 +143,15 @@
     margin: 0 auto;
     text-align: center;
   }
+ .units {
+  position: relative;
+  top: -10px;
+  font-size: 16px;
+  right: 5px;
+  
+ }
+  
+ 
     </style>
   </head>
 
@@ -193,8 +204,8 @@
               </br>
           </br>
                   <img src="images/warm-g7bef9abd6_1280.png" width="70px"/><span class="temperature" id="temperature-input"> 4 </span>
-                  <a href="#" id="celsius-input">°C</a> |
-                  <a href="#" id="fahrenheit-input">°F</a>
+                 <span class="units"> <a href="#" id="celsius-input">°C</a> |
+                  <a href="#" id="fahrenheit-input">°F</a> </span>
               </span>
                 </p>
               </div>
