@@ -18,6 +18,10 @@ function search(event) {
     description.innerHTML = response.data.weather[0].main;
     let locationElement = document.querySelector("#city");
     locationElement.innerHTML = response.data.name;
+    let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
   }
   
   let form = document.querySelector("#search-form");
