@@ -7,7 +7,10 @@ function search(event) {
     let apiKey = "9eca7aac0b071aa16e3cb063adba0785";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showTemperature);
+
   }
+
+  
   
   function showTemperature(response) {
     console.log(response.data.main.temp);
@@ -29,6 +32,9 @@ function search(event) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
  
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   }
   
   let form = document.querySelector("#search-form");
@@ -68,3 +74,33 @@ function search(event) {
   }
   let currentButton = document.querySelector("#current-button");
   currentButton.addEventListener("click", getCurrentPosition);
+
+  function defaultDisplay(city) {
+    let apiKey = "9eca7aac0b071aa16e3cb063adba0785";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showTemperature);
+
+  }
+  defaultDisplay("Tokyo");
+ 
+  function convertFahrenheit(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature-input");
+    let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+  }
+
+  function convertCelsius(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature-input");
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  }
+  
+  let celsiusTemperature = null;
+
+
+  let celsiusInput = document.querySelector("#celsius-input");
+  celsiusInput.addEventListener("click", convertCelsius);
+  
+  let fahrenheitInput = document.querySelector("#fahrenheit-input");
+  fahrenheitInput.addEventListener("click", convertFahrenheit);
