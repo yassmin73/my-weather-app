@@ -86,6 +86,7 @@ li {
   
   .row {
     padding: 20px 10px;
+    
       }
   .forecast {
     width: 70px;
@@ -106,13 +107,14 @@ li {
     
   }
   .high-temperature {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 15px;
   }
   
   .low-temperature {
     font-weight: 300;
     font-size: 15px;
+    opacity: 0.6;
   }
   .card-title-1 {
     padding-right: 4px;
@@ -153,7 +155,10 @@ li {
   right: 5px;
   
  }
-  
+  .weather-forecast {
+    margin-top: 20px;
+    text-align: center;
+  }
  
     </style>
   </head>
@@ -239,86 +244,15 @@ li {
         </div>
       
       
-      
-        <div class="row">
-          <div class="col-2">
-            <div class="card h-100">
-              <h3 class="card-title">Fri</h3>
-              
-              <div class="card-body">
-                  <img src="images/01d@2x.png" class="forecast" />
-                <div class="high-temperature">7° </div>
-                <div class="low-temperature"> 2°</div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-2">
-            <div class="card h-100">
-
-              <h3 class="card-title">Sat</h5>
-              
-              <div class="card-body">
-                  <img src="images/01d@2x.png" class="forecast" />
-                <div class="high-temperature">13° </div>
-                <div class="low-temperature"> 0°</div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-2">
-            <div class="card h-100">
-              <h3 class="card-title">Sun</h3>
-              
-              <div class="card-body">
-                  <img src="images/01d@2x.png" class="forecast" />
-                <div class="high-temperature">14° </div>
-                <div class="low-temperature"> 4°</div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-2">
-            <div class="card h-100">
-              <h3 class="card-title">Mon</h3>
-              
-              <div class="card-body">
-                  <img src="images/02d@2x.png" class="forecast" />
-                <div class="high-temperature">11° </div>
-                <div class="low-temperature"> 1°</div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-2">
-            <div class="card h-100">
-              <h3 class="card-title">Tue</h3>
-              
-            
-              <div class="card-body">
-                  <img src="images/02d@2x.png"  class="forecast"/>
-                <div class="high-temperature">11° </div>
-                <div class="low-temperature"> 0°</div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-2">
-            <div class="card h-100">
-              <h3 class="card-title">Wed</h3>
-              
-              <div class="card-body">
-                  <img src="images/02d@2x.png" class="forecast" />
-                <div class="high-temperature">11° </div>
-                <div class="low-temperature"> 2°</div>
-              </div>
-            </div>
-          </div>
+      <div class="weather-forecast" id="weather-forecast">
+        
+          
         </div>
       </div>
       </div>
     </div>
   </div>
+</div>
   <div class="git-source"> <a href="https://github.com/yassmin73/my-weather-app"> Open-source code by</a> Yasmin</div>
   </div>
 

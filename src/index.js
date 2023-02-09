@@ -10,7 +10,29 @@ function search(event) {
 
   }
 
-  
+  function displayForecast() {
+    let forecastElement = document.querySelector("#weather-forecast");
+
+    let days = ["Fri", "Sat", "Sun", "Mon","Tue","Wed" ];
+
+    let forecastHTML = `<div class="row">`;
+    days.forEach( function (day) {
+      forecastHTML = forecastHTML + ` <div class="col-2">
+      <div class="card h-100">
+        <h3 class="card-title">${day}</h3>
+        
+        <div class="card-body">
+            <img src="images/01d@2x.png" class="forecast" />
+          <div class="high-temperature">7° </div>
+          <div class="low-temperature"> 2°</div>
+        </div>
+      </div>
+    </div>
+      `; 
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+  }
   
   function showTemperature(response) {
     console.log(response.data.main.temp);
@@ -104,3 +126,5 @@ function search(event) {
   
   let fahrenheitInput = document.querySelector("#fahrenheit-input");
   fahrenheitInput.addEventListener("click", convertFahrenheit);
+
+  displayForecast();
