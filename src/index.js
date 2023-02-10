@@ -107,19 +107,6 @@ function search(event) {
   }
   currentDate.innerHTML = `${day} ${hours}:${minutes}`;
   
-  function searchPosition(position) {
-    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showTemperature);
-  }
-  
-  function getCurrentPosition(event) {
-    event.preventDefault();
-    navigator.geolocation.getCurrentPosition(searchPosition);
-  }
-  let currentButton = document.querySelector("#current-button");
-  currentButton.addEventListener("click", getCurrentPosition);
-
   function defaultDisplay(city) {
     let apiKey = "9eca7aac0b071aa16e3cb063adba0785";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
