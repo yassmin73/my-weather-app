@@ -126,27 +126,5 @@ function search(event) {
     axios.get(apiUrl).then(showTemperature);
 
   }
-  defaultDisplay("Tokyo");
- 
-  function convertFahrenheit(event) {
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature-input");
-    let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
-  }
-
-  function convertCelsius(event) {
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature-input");
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  }
-  
-  let celsiusTemperature = null;
-
-
-  let celsiusInput = document.querySelector("#celsius-input");
-  celsiusInput.addEventListener("click", convertCelsius);
-  
-  let fahrenheitInput = document.querySelector("#fahrenheit-input");
-  fahrenheitInput.addEventListener("click", convertFahrenheit);
+  defaultDisplay("Tokyo"); 
 
